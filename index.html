@@ -11,11 +11,20 @@
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
     
-    <div class="instants">
-        <input type="button" value="33">
+    <div id="controls">
+        <input type="button" value="Play" onclick="playVideo();">
+        <input type="button" value="Pause" onclick="pauseVideo();">
+        <input type="button" value="Stop" onclick="stopVideo();">
     </div>
     
+    <div id="instants">
+        <input type="button" value="To 33s" onclick="toInstant(33);">
+        <input type="button" value="To 66s" onclick="toInstant(66);">
+        <input type="button" value="To 99s" onclick="toInstant(99);">
+    </div>
+
     <script>
+      
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -30,10 +39,10 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: 'tX8X0-oMW1g',
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            // 'onStateChange': onPlayerStateChange
           }
         });
       }
@@ -53,9 +62,20 @@
           done = true;
         }
       }
+
+      function playVideo() {
+        player.playVideo();
+      }
+      function pauseVideo() {
+        player.pauseVideo();
+      }
       function stopVideo() {
         player.stopVideo();
+      }     
+      function toInstant(instant) {    
+        player.seekTo(instant, true);
       }
+      
     </script>
     
     </div>
