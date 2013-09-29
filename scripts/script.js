@@ -1,0 +1,64 @@
+      
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('player', {
+		height: '300',
+		width: '390',
+		videoId: 'iUQ1fvdO9GY',
+		events: {
+			'onReady': onPlayerReady,
+		}
+	});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+	event.target.playVideo();
+}
+
+function playVideo() {
+	player.playVideo();
+}
+function pauseVideo() {
+	player.pauseVideo();
+}
+function stopVideo() {
+	player.stopVideo();
+}     
+function toInstant(time) {
+	player.seekTo(time, true);
+}
+
+var instants = [
+	[30, "Install Yeoman", "npm install -g yo"],
+	[48, "Install Angular Generator", "npm install -g generator-angular"],
+	[66, "Scaffold AngularJS Application", "yo angular"],
+	[80, "80 Sample", "rm -r"],
+	[90, "90 Last kiss", "ls -ls"]
+]
+
+$(function() {
+	$('table#instants > tbody > tr').click(function() {
+				
+		$('table#instants > tbody > tr').removeClass("success");
+		$(this).addClass("success");
+		
+		var rowId = $(this).data("row-key");
+		var instantIndex = rowId - 1;
+		var command = instants[instantIndex][2]
+		$('#message').attr("value", command);
+		
+		var time = instants[instantIndex][0]
+		toInstant(time);
+		
+	});
+});
