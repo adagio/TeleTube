@@ -1,9 +1,10 @@
 $(function() {
 	
   var createRows = function() {
+		instants = obj.instants;
 		for (var i = 0; i < instants.length; i++) {
-      var instant = instants[i];
-			$('table#instants > tbody').append('<tr data-row-key="'+(i+1)+'"><td>'+instant[0]+'</td><td>'+instant[1]+'</td></tr>');
+      var instant = obj.instants[i];
+			$('table#instants > tbody').append('<tr data-row-key="'+(i+1)+'"><td>'+instant.startAt+'</td><td>'+instant.title+'</td></tr>');
     }
 	};
 	

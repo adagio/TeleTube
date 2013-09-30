@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
   
     <link rel="stylesheet" href="styles/style.css">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   
   </head>
   <body>
@@ -52,17 +54,20 @@
     </div>
     
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
     <script>
-			
-    	function loadInstants(jsonString) {
-				return JSON.parse(jsonString);
-			};
     	
     	var YOUTUBE_ID = 'iUQ1fvdO9GY';
-      var instants_json = 'http://adagio.github.io/TeleTube/json/iUQ1fvdO9GY.json';
       
-      var instants = loadInstants(instants_json);
+			var txt = '{ "instants" : [' +
+			'{ "startAt":"30" , "title":"Install Yeoman" , "message":"npm install -g yo"},' +
+			'{ "startAt":"48" , "title":"Install Angular Generator" , "message":"npm install -g generator-angular"},' +
+			'{ "startAt":"66" , "title":"Scaffold AngularJS Application" , "message":"yo angular"},' +
+			'{ "startAt":"80" , "title":"80 Sample" , "message":"rm -r"},' +
+			'{ "startAt":"90" , "title":"90 Last kiss" , "message":"ls -ls"},' +
+			'{ "startAt":"100" , "title":"tu" , "message":"sd"} ]}';
+
+			var obj = eval ("(" + txt + ")");
     
     </script>
     <script src="scripts/youtube.js"></script>
