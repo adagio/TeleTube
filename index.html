@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>TeleTube: Context Content for Videos</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-  
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+  	<link rel="stylesheet" href="styles/bootstrap-theme.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="scripts/jquery-2.0.3.min.js"></script>
   
   </head>
   <body>
@@ -21,22 +23,8 @@
       </div>
       
       <div id="content">
-    
-        <div id="player-container">
-					
-					<div id="player"></div>
-			
-					<form id="controls" class="form-inline" role="form">
-						<button type="button" onclick="playVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-play"></span> Play</button>
-						<button type="button" onclick="pauseVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-pause"></span> Pause</button>
-						<button type="button" onclick="stopVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-stop"></span> Stop</button>
-					</form>
-    			
-    		</div>
- 				
-        <input id="message" class="form-control" type="text" placeholder="$>">
     		 
-    		<div>
+    		<div id="instants-container" class="col-md-4 col-sm-6">
 					<table id="instants" class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
@@ -48,29 +36,68 @@
 						</tbody>
 					</table>
         </div>
+        
+        
+				<div id="message-container" class="col-md-4 col-sm-6">
+				  <div id="message" class="alert alert-info">...</div>
+        </div>
+        
+			  <div id="player-container" class="col-md-4 col-sm-6">
+					
+					<div id="player"></div>
+			
+					<form id="controls" class="form-inline" role="form">
+						<button type="button" onclick="playVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-play"></span> Play</button>
+						<button type="button" onclick="pauseVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-pause"></span> Pause</button>
+						<button type="button" onclick="stopVideo();" class="btn btn-default"> <span class="glyphicon glyphicon-stop"></span> Stop</button>
+					</form>
+    			
+    		</div>
       
       </div>
       
     </div>
     
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    
     
     <script>
     	
     	var YOUTUBE_ID = 'iUQ1fvdO9GY';
       
 			var txt = '{ "instants" : [' +
-			'{ "startAt":"30" , "title":"Install Yeoman" , "message":"npm install -g yo"},' +
-			'{ "startAt":"48" , "title":"Install Angular Generator" , "message":"npm install -g generator-angular"},' +
-			'{ "startAt":"66" , "title":"Scaffold AngularJS Application" , "message":"yo angular"},' +
-			'{ "startAt":"80" , "title":"80 Sample" , "message":"rm -r"},' +
-			'{ "startAt":"90" , "title":"90 Last kiss" , "message":"ls -ls"},' +
-			'{ "startAt":"100" , "title":"tu" , "message":"sd"} ]}';
-
-			var obj = eval ("(" + txt + ")");
+			'{ "startAt":"30" , "title":"Install Yeoman" , "messages": [' +
+												'{"line":"npm install -g yo"} ]},' +
+			'{ "startAt":"48" , "title":"Install Angular Generator" , "messages": [' +
+												'{"line":"npm install -g generator-angular"} ]},' +
+			'{ "startAt":"63" , "title":"Scaffold AngularJS Application" , "messages": [' +
+												'{"line":"yo angular"} ]},' +
+			'{ "startAt":"93" , "title":"Grunt Server" , "messages": [' +
+												'{"line":"grunt server"} ]},' +
+			'{ "startAt":"112" , "title":"Declaring TODOs" , "file":"app/scripts/controllers/main.js", "messages": [' +
+												'{"line":"$scope.todos = [\'Item 1\', \'Item 2\', \'Item 3\'];"} ]},' +
+			'{ "startAt":"126" , "title":"Defining template for TODOs" , "file":"app/views/main.html" , "messages": [' +
+												'{"line":"<p>"}, ' +
+												'{"line":"  <input>"}, ' +
+												'{"line":"</p>"} ]},' +
+			'{ "startAt":"276" , "title":"Form with Emmet" , "messages": [' +
+												'{"line":"form⇥"},' +
+												'{"line":"div.controls.form-inline⇥"},' +
+												'{"line":"input⇥"},' +
+												'{"line":"input:s.btn.btn-primary⇥"} ]},' +
+			'{ "startAt":"90" , "title":"90 Last kiss" , "messages": [' +
+												'{"line":"ls -ls"} ]},' +
+			'{ "startAt":"100" , "title":"tu" , "messages": [' +
+												'{"line":"sd"} ]},' +
+			']}';
+    
+      console.log(txt);
     
     </script>
+    
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+    <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/youtube.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script src="scripts/main.js"></script>
     
   </body>
