@@ -46,22 +46,23 @@ $(function() {
 			
 			var instant = instants[instantIndex];
 			
-			$('div#messages-container > p#file').html('');
-			$('div#messages-container > pre#messages').html('');
+			$('div#messages-container').html('');
 			
 			if (instant.hasOwnProperty('file')) {
 				var file = instant.file;
-			  $('div#messages-container > p#file').prepend('<p><strong>file: ' + file + '</strong><br /></p>');
+				$('div#messages-container').html('<p id="file"></p>');
+			  $('div#messages-container > p#file').html('<strong>file: ' + file + '</strong>');
 			}
 
 			if (instant.hasOwnProperty('messages')) {
 				var messages = instant.messages;
 				var message = '';
 				var i = 0;
+				$('div#messages-container').html('<pre id="messages"></p>');
 				for ( i; i < messages.length; i++ ) {
       		message = instant.messages[i];
 					line = safe_tags_replace(message.line);
-					$('div#messages-container > pre#messages').append(line + '<br />');
+					$('div#messages-container > pre#messages').append(line + '\n');
     		}
 			}
 			
