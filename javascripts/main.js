@@ -58,7 +58,7 @@ $(function() {
 				var messages = instant.messages;
 				var message = '';
 				var i = 0;
-				$('div#messages-container').html('<pre id="messages"></p>');
+				$('div#messages-container').html('<pre id="messages"></pre>');
 				for ( i; i < messages.length; i++ ) {
       		message = instant.messages[i];
 					line = safe_tags_replace(message.line);
