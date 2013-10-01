@@ -50,7 +50,7 @@ $(function() {
 			
 			if (instant.hasOwnProperty('file')) {
 				var file = instant.file;
-				$('div#messages-container').html('<p id="file"></p>');
+				$('div#messages-container').append('<p id="file"></p>');
 			  $('div#messages-container > p#file').html('<strong>file: ' + file + '</strong>');
 			}
 
@@ -58,7 +58,7 @@ $(function() {
 				var messages = instant.messages;
 				var message = '';
 				var i = 0;
-				$('div#messages-container').html('<pre id="messages"></pre>');
+				$('div#messages-container').append('<pre id="messages"></pre>');
 				for ( i; i < messages.length; i++ ) {
       		message = instant.messages[i];
 					line = safe_tags_replace(message.line);
