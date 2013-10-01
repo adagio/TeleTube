@@ -31,7 +31,7 @@ $(function() {
       instant = instants[i];
 			startAt = instant.startAt;
 			startAtFormatted = pad(Math.floor((startAt/60))) + ':' + pad(startAt%60);
-			$('div#instants-container > table#instants> tbody').append('<tr data-row-key="'+(i+1)+'"><td>['+startAtFormatted+'] '+instant.title+'</td></tr>');
+			$('div#instants-container > table#instants> tbody').append('<tr onclick="callPlayer(\'player-container\',\'seekTo\',[\''+startAt+'\']);" data-row-key="'+(i+1)+'"><td>['+startAtFormatted+'] '+instant.title+'</td></tr>');
     }
 	};
 	
@@ -65,9 +65,6 @@ $(function() {
 					$('div#messages-container > pre#messages').append(line + '\n');
     		}
 			}
-			
-			var startAt = instant.startAt;
-			toInstant(startAt);
 			
 		});
 	};
