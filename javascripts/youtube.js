@@ -10,8 +10,10 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
-		height: '266',
-		width: '420',
+		//height: '266',
+		//width: '420',
+		height: '220',
+		width: '380',
 		videoId: YOUTUBE_ID,
 		events: {
 			'onReady': onPlayerReady,
