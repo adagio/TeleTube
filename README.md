@@ -1,6 +1,7 @@
 TeleTube
 ========
 
+Code snippets (ready to copy/paste) time-linked to video tutorial 
 Context Content for Video Instants
 
 "What command has he used in that video?"
