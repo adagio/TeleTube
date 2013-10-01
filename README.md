@@ -2,6 +2,7 @@ TeleTube
 ========
 
 Context Content for Video Instants
+
 Video Tutorial annotated with time-linked Code Snippets
 
 [View Page](http://adagio.github.io/TeleTube/)

@@ -27,12 +27,7 @@ function onPlayerReady(event) {
 function playVideo() {
 	player.playVideo();
 }
-function pauseVideo() {
-	player.pauseVideo();
-}
-function stopVideo() {
-	player.stopVideo();
-}     
+
 function toInstant(time) {
 	player.seekTo(time, true);
 }
