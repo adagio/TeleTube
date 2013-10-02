@@ -18,7 +18,27 @@ function pad(num) {
     return s;
 }
 
+function makeHttpObject() {
+  try {return new XMLHttpRequest();}
+  catch (error) {}
+  try {return new ActiveXObject("Msxml2.XMLHTTP");}
+  catch (error) {}
+  try {return new ActiveXObject("Microsoft.XMLHTTP");}
+  catch (error) {}
+
+  throw new Error("Could not create HTTP request object.");
+}
+
+function loadJSON() {
+	var request = makeHttpObject();
+	request.open("GET", "json/" + YOUTUBE_ID + ".json", false);
+	request.send(null);
+	return request.responseText;
+};
+
 $(function() {
+	
+	var txt = loadJSON();
 	
 	var obj = eval ("(" + txt + ")");
     
