@@ -43,52 +43,18 @@
         </div>
 				
         <div id="player-container" class="text-center col-md-8 col-sm-8">
-					<iframe width="291" height="210" src="//www.youtube.com/embed/iUQ1fvdO9GY" frameborder="0" allowfullscreen="false"></iframe>
+					<iframe width="291" height="210" src="http://www.youtube.com/embed/iUQ1fvdO9GY" frameborder="0" allowfullscreen="false"></iframe>
         </div>
       
       </div>
       
     </div>
-    
+		
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+		<script src="javascripts/jquery-2.0.3.min.js"></script>
+		
     <script>
-    	
     	var YOUTUBE_ID = 'iUQ1fvdO9GY';
-      
-			var txt = '{ "instants" : [' +
-			'{ "startAt":30 , "title":"Install Yeoman" , "messages": [' +
-												'{"line":"npm install -g yo"} ]},' +
-			'{ "startAt":48 , "title":"Install Angular Generator" , "messages": [' +
-												'{"line":"npm install -g generator-angular"} ]},' +
-			'{ "startAt":63 , "title":"Scaffold AngularJS Application" , "messages": [' +
-												'{"line":"yo angular"} ]},' +
-			'{ "startAt":93 , "title":"Grunt Server" , "messages": [' +
-												'{"line":"grunt server"} ]},' +
-			'{ "startAt":112 , "title":"Declaring TODOs" , "file":"app/scripts/controllers/main.js", "messages": [' +
-												'{"line":"$scope.todos = [\'Item 1\', \'Item 2\', \'Item 3\'];"} ]},' +
-			'{ "startAt":126 , "title":"Defining template for TODOs" , "file":"app/views/main.html" , "messages": [' +
-												'{"line":"<p ng-repeat=\\\"todo in todos\\\""}, ' +
-												'{"line":"  <input type=\\\"text\\\" ng-model=\\\"todo\\\">"}, ' +
-												'{"line":"</p>"} ]},' +
-			'{ "startAt":169 , "title":"Button for Adding TODOs" , "file":"app/views/main.html", "messages": [' +
-												'{"line":"<form ng-submit=\\\"addTodo()\\\">"},' +
-												'{"line":"  <div class=\\\"controls form-inline\\\">"},' +
-												'{"line":"    <input type=\\\"text\\\" ng-model=\\\"todo\\\" size=\\\"20\\\">"},' +
-												'{"line":"    <input type=\\\"submit\\\" class=\\\"btn btn-primary\\\" value=\\\"Add\\\">"},' +
-												'{"line":"  </div>"},' +
-												'{"line":"</form>"} ]},' +
-			'{ "startAt":169 , "title":"Functionality for Adding TODOs" , "file":"app/scripts/controllers/main.js", "messages": [' +
-												'{"line":"$scope.addTodo = function(){"},' +
-												'{"line":"  $scope.todos.push($scope.todo);"},' +
-												'{"line":"  $scope.todo = \'\';"},' +
-												'{"line":"}"} ]},' +
-			'{ "startAt":270 , "title":"Button for Removing TODOs" , "file":"app/views/main.html", "messages": [' +
-												'{"line":"<a class=\\\"btn\\\" ng-click=\\\"removeTodo($index)\\\">X</a>"} ]},' +
-			'{ "startAt":298 , "title":"Functionality for Removing TODOs" , "file":"app/scripts/controllers/main.js", "messages": [' +
-												'{"line":"$scope.removeTodo = function($index) {"},' +
-												'{"line":"  $scope.todos.splice($index, 1);"},' +
-												'{"line":"};"} ]}' +
-			']}';
-			
     </script>
 		
     <script>
@@ -119,9 +85,7 @@
      ga('create', 'UA-44323552-1', 'adagio.github.io');
      ga('send', 'pageview');
     </script>
-		
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <script src="javascripts/jquery-2.0.3.min.js"></script>
+		    
     <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
     <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/main.js"></script>
