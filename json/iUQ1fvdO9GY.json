@@ -1,1 +1,193 @@
-{ "instants" : [{ "startAt":30 , "title":"Install Yeoman" , "messages": [{"line":"npm install -g yo"} ]},{ "startAt":48 , "title":"Install Angular Generator" , "messages": [{"line":"npm install -g generator-angular"} ]},{ "startAt":63 , "title":"Scaffold AngularJS Application" , "messages": [{"line":"yo angular"} ]},{ "startAt":93 , "title":"Grunt Server" , "messages": [{"line":"grunt server"} ]},{ "startAt":112 , "title":"Declaring TODOs" , "file":"app/scripts/controllers/main.js", "messages": [{"line":"$scope.todos = ['Item 1', 'Item 2', 'Item 3'];"} ]},{ "startAt":126 , "title":"Defining template for TODOs" , "file":"app/views/main.html" , "messages": [{"line":"<p ng-repeat=\"todo in todos\""}, {"line":"  <input type=\"text\" ng-model=\"todo\">"}, {"line":"</p>"} ]},{ "startAt":169 , "title":"Button for Adding TODOs" , "file":"app/views/main.html", "messages": [{"line":"<form ng-submit=\"addTodo()\">"},{"line":"  <div class=\"controls form-inline\">"},{"line":"    <input type=\"text\" ng-model=\"todo\" size=\"20\">"},{"line":"    <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">"},{"line":"  </div>"},{"line":"</form>"} ]},{ "startAt":169 , "title":"Functionality for Adding TODOs" , "file":"app/scripts/controllers/main.js", "messages": [{"line":"$scope.addTodo = function(){"},{"line":"  $scope.todos.push($scope.todo);"},{"line":"  $scope.todo = '';"},{"line":"}"} ]},{ "startAt":270 , "title":"Button for Removing TODOs" , "file":"app/views/main.html", "messages": [{"line":"<a class=\"btn\" ng-click=\"removeTodo($index)\">X</a>"} ]},{ "startAt":298 , "title":"Functionality for Removing TODOs" , "file":"app/scripts/controllers/main.js", "messages": [{"line":"$scope.removeTodo = function($index) {"},{"line":"  $scope.todos.splice($index, 1);"},{"line":"};"} ]}]}
+{
+    "instants": [
+        {
+            "startAt": 30,
+            "title": "Install Yeoman",
+            "messages": [
+                {
+                    "line": "npm install -g yo"
+                }
+            ]
+        },
+        {
+            "startAt": 48,
+            "title": "Install Angular Generator",
+            "messages": [
+                {
+                    "line": "npm install -g generator-angular"
+                }
+            ]
+        },
+        {
+            "startAt": 63,
+            "title": "Scaffold AngularJS Application",
+            "messages": [
+                {
+                    "line": "yo angular"
+                }
+            ]
+        },
+        {
+            "startAt": 93,
+            "title": "Grunt Server",
+            "messages": [
+                {
+                    "line": "grunt server"
+                }
+            ]
+        },
+        {
+            "startAt": 112,
+            "title": "Declare TODOs",
+            "file": "app/scripts/controllers/main.js",
+            "messages": [
+                {
+                    "line": "$scope.todos = ['Item 1', 'Item 2', 'Item 3'];"
+                }
+            ]
+        },
+        {
+            "startAt": 126,
+            "title": "Define template for TODOs",
+            "file": "app/views/main.html",
+            "messages": [
+                {
+                    "line": "<p ng-repeat=\"todo in todos\""
+                },
+                {
+                    "line": "  <input type=\"text\" ng-model=\"todo\">"
+                },
+                {
+                    "line": "</p>"
+                }
+            ]
+        },
+        {
+            "startAt": 169,
+            "title": "Button for Adding TODOs",
+            "file": "app/views/main.html",
+            "messages": [
+                {
+                    "line": "<form ng-submit=\"addTodo()\">"
+                },
+                {
+                    "line": "  <div class=\"controls form-inline\">"
+                },
+                {
+                    "line": "    <input type=\"text\" ng-model=\"todo\" size=\"20\">"
+                },
+                {
+                    "line": "    <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">"
+                },
+                {
+                    "line": "  </div>"
+                },
+                {
+                    "line": "</form>"
+                }
+            ]
+        },
+        {
+            "startAt": 222,
+            "title": "Functionality for Adding TODOs",
+            "file": "app/scripts/controllers/main.js",
+            "messages": [
+                {
+                    "line": "$scope.addTodo = function(){"
+                },
+                {
+                    "line": "  $scope.todos.push($scope.todo);"
+                },
+                {
+                    "line": "  $scope.todo = '';"
+                },
+                {
+                    "line": "}"
+                }
+            ]
+        },
+        {
+            "startAt": 270,
+            "title": "Button for Removing TODOs",
+            "file": "app/views/main.html",
+            "messages": [
+                {
+                    "line": "<a class=\"btn\" ng-click=\"removeTodo($index)\">X</a>"
+                }
+            ]
+        },
+        {
+            "startAt": 298,
+            "title": "Functionality for Removing TODOs",
+            "file": "app/scripts/controllers/main.js",
+            "messages": [
+                {
+                    "line": "$scope.removeTodo = function($index) {"
+                },
+                {
+                    "line": "  $scope.todos.splice($index, 1);"
+                },
+                {
+                    "line": "};"
+                }
+            ]
+        },
+        {
+            "startAt": 333,
+            "title": "Install Angular UI to make TODOs sortable",
+            "messages": [
+                {
+                    "line": "bower install --save angular-ui"
+                }
+            ]
+        },
+        {
+            "startAt": 373,
+            "title": "Add Angular UI related JS and CSS",
+            "file": "app/index.html",
+            "messages": [
+                {
+                    "line": "<link rel=\\\"stylesheet\\\" href=\\\"bower_components/angular-ui/build/angular-ui.css\\\">"
+                },
+                {
+                    "line": "<script src=\\\"bower_components/angular-ui/build/angular-ui.js\\\"></script>"
+                }
+            ]
+        },
+        {
+            "startAt": 429,
+            "title": "Enable angular-ui module",
+            "file": "app/scripts/app.js",
+            "messages": [
+                {
+                    "line": "angular.module('palitobolitaApp', ['ui'])"
+                }
+            ]
+        },
+        {
+            "startAt": 443,
+            "title": "Wrap TODOs inside a div with ui-sortable property",
+            "file": "app/views/main.html",
+            "messages": [
+                {
+                    "line": "<div ui-sortable>"
+                },
+                {
+                    "line": "   <p ng-repeat=\\\"todo in todos\\\">"
+                },
+                {
+                    "line": "       <input type=\\\"text\\\" ng-model=\\\"todo\\\">"
+                },
+                {
+                    "line": "       <a class=\\\"btn\\\" ng-click=\\\"removeTodo($index)\\\">X</a>"
+                },
+                {
+                    "line": "   </p>"
+                },
+                {
+                    "line": "</div>"
+                }
+            ]
+        }
+    ]
+}
